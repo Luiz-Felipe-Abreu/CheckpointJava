@@ -25,7 +25,7 @@ public class Personagem {
     private int nivel;
 
     @Min(0)
-    private double moedas;
+    private int moedas;
 
     @OneToMany(mappedBy = "dono", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> itens;
@@ -68,7 +68,7 @@ public class Personagem {
         return moedas;
     }
 
-    public void setMoedas(double moedas) {
+    public void setMoedas(int moedas) {
         this.moedas = moedas;
     }
 

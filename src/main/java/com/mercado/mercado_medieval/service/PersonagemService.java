@@ -33,7 +33,7 @@ public class PersonagemService {
             p.setNome(personagem.getNome());
             p.setClasse(personagem.getClasse());
             p.setNivel(personagem.getNivel());
-            p.setMoedas(personagem.getMoedas());
+            p.setMoedas((int)personagem.getMoedas());
             return personagemRepository.save(p);
         });
     }

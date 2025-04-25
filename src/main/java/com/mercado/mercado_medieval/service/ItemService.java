@@ -52,7 +52,7 @@ public class ItemService {
         itemExistente.setNome(novosDados.getNome());
         itemExistente.setTipo(novosDados.getTipo());
         itemExistente.setRaridade(novosDados.getRaridade());
-        itemExistente.setPreco(novosDados.getPreco());
+        itemExistente.setPreco((int)novosDados.getPreco());
 
         return itemRepository.save(itemExistente);
     }

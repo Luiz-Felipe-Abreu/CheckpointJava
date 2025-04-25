@@ -25,7 +25,7 @@ public class Item {
     private RaridadeItem raridade;
 
     @Min(0)
-    private double preco;
+    private int preco;
 
     @ManyToOne
     @JoinColumn(name = "personagem_id")
@@ -69,7 +69,7 @@ public class Item {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(int preco) {
         this.preco = preco;
     }
 
