@@ -1,20 +1,13 @@
 package com.mercado.mercado_medieval.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.mercado.mercado_medieval.model.Item;
+import com.mercado.mercado_medieval.model.enums.RaridadeItem;
+import com.mercado.mercado_medieval.model.enums.TipoItem;
 import com.mercado.mercado_medieval.service.ItemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/itens")
@@ -54,12 +47,12 @@ public class ItemController {
     }
 
     @GetMapping("/buscar/tipo")
-    public List<Item> buscarPorTipo(@RequestParam Tipo tipo) {
+    public List<Item> buscarPorTipo(@RequestParam TipoItem tipo) {
         return itemService.buscarPorTipo(tipo);
     }
 
     @GetMapping("/buscar/raridade")
-    public List<Item> buscarPorRaridade(@RequestParam Raridade raridade) {
+    public List<Item> buscarPorRaridade(@RequestParam RaridadeItem raridade) {
         return itemService.buscarPorRaridade(raridade);
     }
 
